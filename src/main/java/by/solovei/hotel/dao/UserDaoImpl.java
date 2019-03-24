@@ -1,8 +1,10 @@
 package by.solovei.hotel.dao;
 
 import by.solovei.hotel.models.User;
+import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -53,5 +55,14 @@ public class UserDaoImpl implements UserDao {
         if(u != null){
             session.delete(u);
         }
+    }
+
+    @Override
+    public User getUserByLogin(String login) {
+        Session session = this.sessionFactory.getCurrentSession();
+        Criteria criteria = session.createCriteria(User.class);
+        criteria.add(Restrictions.eq("login", login));
+        User user = (User) criteria.uniqueResult();
+        return user;
     }
 }

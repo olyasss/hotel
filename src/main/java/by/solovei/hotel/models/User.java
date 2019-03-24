@@ -41,6 +41,15 @@ public class User implements java.io.Serializable {
     public User() {
     }
 
+    public User(String login, String password, String email, String name, String surname, String phone) {
+        this.login = login;
+        this.password = password;
+        this.email = email;
+        this.name = name;
+        this.surname = surname;
+        this.phone = phone;
+    }
+
     public User(String login, String password, String email, String name, String surname, String phone, Set<Booking> bookings) {
         this.login = login;
         this.password = password;

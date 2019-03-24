@@ -43,7 +43,7 @@
         </tr>
     </c:forEach>
 </table>
-<p><a href="index.jsp">Главная</a></p>
+<p><a href="home">Главная</a></p>
 <p><a href="users">Пользователи</a></p>
 <p><a href="rooms">Комнаты</a></p>
 </body>

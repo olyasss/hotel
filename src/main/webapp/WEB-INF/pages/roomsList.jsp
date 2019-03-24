@@ -7,6 +7,8 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -37,7 +39,8 @@
         </tr>
     </c:forEach>
 </table>
-<p><a href="index.jsp">Главная</a></p>
+
+<p><a href="home">Главная</a></p>
 <p><a href="users">Пользователи</a></p>
 <p><a href="booking">Заказы</a></p>
 </body>
