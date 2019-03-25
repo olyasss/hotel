@@ -1,7 +1,7 @@
 package by.solovei.hotel.models;
 
 import javax.persistence.*;
-import java.sql.Date;
+import java.util.Date;
 
 import static javax.persistence.GenerationType.IDENTITY;
 
@@ -45,6 +45,13 @@ public class Booking {
         this.dateTo = dateTo;
         passport = passport;
         this.paid = paid;
+    }
+
+    public Booking(User user, Room room, Date dateFrom, Date dateTo) {
+        this.user = user;
+        this.room = room;
+        this.dateFrom = dateFrom;
+        this.dateTo = dateTo;
     }
 
     public Integer getId() {

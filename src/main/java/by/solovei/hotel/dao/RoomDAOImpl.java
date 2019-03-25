@@ -1,8 +1,10 @@
 package by.solovei.hotel.dao;
 
 import by.solovei.hotel.models.Room;
+import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -42,6 +44,15 @@ public class RoomDAOImpl implements RoomDAO {
     public Room getRoomById(int id) {
         Session session = this.sessionFactory.getCurrentSession();
         Room room = (Room) session.load(Room.class, new Integer(id));
+        return room;
+    }
+
+    @Override
+    public Room getRoomByNumber(int number) {
+        Session session = this.sessionFactory.getCurrentSession();
+        Criteria criteria = session.createCriteria(Room.class);
+        criteria.add(Restrictions.eq("number", number));
+        Room room = (Room) criteria.uniqueResult();
         return room;
     }
 

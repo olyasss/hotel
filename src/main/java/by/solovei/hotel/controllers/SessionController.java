@@ -10,6 +10,11 @@ import org.springframework.web.servlet.ModelAndView;
 @SessionAttributes("user_session")
 public class SessionController {
 
+    @ModelAttribute("user_session")
+    public User populateUser(){
+        return  new User();
+    }
+
     @RequestMapping(value = "/homeAttr", method = RequestMethod.GET)
     public String sessionAttributes (@ModelAttribute User user) {
         ModelAndView modelAndView = new ModelAndView("home");

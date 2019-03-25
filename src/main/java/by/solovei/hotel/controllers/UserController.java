@@ -20,15 +20,21 @@ public class UserController {
     @RequestMapping(value = "/users", method = RequestMethod.GET)
     public String getAllUsers(Model model){
         model.addAttribute("users", userService.listUser());
-        model.addAttribute("userFromForm", new User());
         return "usersList";
     }
 
-    //add user
-    @RequestMapping(value = "/users/add", method = RequestMethod.POST)
-    public String addUser(@ModelAttribute("userFromForm") User user){
+    @RequestMapping(value = "/registration", method = RequestMethod.GET)
+    public String getFormUsers(Model model){
+        model.addAttribute("userFromForm", new User());
+        return "registration";
+    }
+
+    @RequestMapping(value = "/registration/add", method = RequestMethod.POST)
+    public String addUser(@ModelAttribute("userFromForm") User user,
+                          @ModelAttribute("user_session") User userSession){
         userService.addUser(user);
-        return "redirect:/users";
+        userSession=user;
+        return "redirect:/home";
     }
 
 }

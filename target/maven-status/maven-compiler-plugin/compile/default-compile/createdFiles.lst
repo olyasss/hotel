@@ -11,6 +11,7 @@ by\solovei\hotel\dao\RoomDAO.class
 by\solovei\hotel\dao\BookingDAO.class
 by\solovei\hotel\dao\RoomDAOImpl.class
 by\solovei\hotel\services\UserService.class
+by\solovei\hotel\models\DateInfo.class
 by\solovei\hotel\controllers\HomeController.class
 by\solovei\hotel\controllers\BookingController.class
 by\solovei\hotel\services\RoomServiceImpl.class

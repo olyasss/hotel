@@ -11,4 +11,6 @@ public interface RoomService {
     public List<Room> listRoom();
     public Room getRoomById(int id);
     public void deleteRoom(int id);
+    public Room getRoomByNumber(int number);
 }
+
