@@ -12,9 +12,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="res/css/style.css" type="text/css">
     <title>Booking page</title>
 </head>
 <body>
+
+<div class="block1">
+    <h5>${user_session.login} </h5>
+</div>
+
+<div class="block2">
+    <p><a href="home"><img src="res/buttons/home.jpg"></a></p>
+    <p><a href="bookingroom"><img src="res/buttons/booking.jpg"></a></p>
+    <p><a href="booking"><img src="res/buttons/bookingList.jpg"></a></p>
+    <p><a href="users"><img src="res/buttons/userList.jpg"></a></p>
+</div>
+
+<div class="block3">
 <table >
     <tr>
         <th>№</th>
@@ -25,7 +39,6 @@
         <th>дата заселения</th>
         <th>дата выселения</th>
         <th>паспортные данные</th>
-        <th>оплата</th>
 
     </tr>
 
@@ -39,12 +52,14 @@
             <td> ${a.dateFrom}</td>
             <td> ${a.dateTo}</td>
             <td> ${a.passport}</td>
-            <td> ${a.paid}</td>
         </tr>
     </c:forEach>
 </table>
-<p><a href="home">Главная</a></p>
-<p><a href="users">Пользователи</a></p>
-<p><a href="rooms">Комнаты</a></p>
+    <form action="/hotel/booking/delete" method="post">
+        Number: <input name="bookingId" type="number" min="1"/>
+        <input type="submit" value="submit" />
+    </form>
+</div>
+
 </body>
 </html>

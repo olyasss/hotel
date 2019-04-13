@@ -14,9 +14,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="res/css/style.css" type="text/css">
     <title>Users page</title>
 </head>
 <body>
+
+<div class="block1">
+    <h5>${user_session.login} </h5>
+</div>
+
+<div class="block2">
+    <p><a href="home"><img src="res/buttons/home.jpg"></a></p>
+    <p><a href="bookingroom"><img src="res/buttons/booking.jpg"></a></p>
+    <p><a href="booking"><img src="res/buttons/bookingList.jpg"></a></p>
+    <p><a href="users"><img src="res/buttons/userList.jpg"></a></p>
+</div>
+
+<div class="block3">
 <table >
     <tr>
         <th>№</th>
@@ -40,9 +54,11 @@
         </tr>
     </c:forEach>
 </table>
+    <form action="/hotel/users/delete" method="post">
+        Number: <input name="userId" type="number" min="1"/>
+        <input type="submit" value="submit" />
+    </form>
+</div>
 
-<p><a href="home">Главная</a></p>
-<p><a href="rooms">Комнаты</a></p>
-<p><a href="booking">Заказы</a></p>
 </body>
 </html>

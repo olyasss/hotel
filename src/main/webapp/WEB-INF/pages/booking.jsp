@@ -9,23 +9,35 @@
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="res/css/style.css" type="text/css">
     <title>Booking page</title>
 </head>
 <body>
+<jsp:useBean id="date" class="by.solovei.hotel.models.DateInfo"/>
 
-<form:form modelAttribute="dateForm" method="post" action="/hotel/bookingroom/date">
-    <br>date from <form:label  path="dateFrom" id="1" />
-    <input type="date" form="1"/>
-    <br>date to <form:label path="dateTo" id="2"/>
-    <input type="date" form="2">
-    <br><form:button>booking</form:button>
+<div class="block1">
+    <h5>${user_session.login} </h5>
+</div>
 
-</form:form>
+<div class="block2">
+    <p><a href="home"><img src="res/buttons/home.jpg"></a></p>
+    <p><a href="bookingroom"><img src="res/buttons/booking.jpg"></a></p>
+    <p><a href="booking"><img src="res/buttons/bookingList.jpg"></a></p>
+    <p><a href="users"><img src="res/buttons/userList.jpg"></a></p>
+</div>
+
+<div class="block3">
+<form action="/hotel/bookingroom/date" method="post" id="date">
+    date from: <input name="dateFrom"/>
+    date from: <input name="dateTo"/>
+    <input type="submit" value="submit" />
+</form>
 
 <br>
 <br>
@@ -54,15 +66,14 @@
 </table>
 
 <br>
-<br>
-<form:form modelAttribute="roomNumber" method = "post" action="/hotel/bookingroom/book">
-    <br><form:label path="roomNumber" id="3"/>
-    Room number <input type="number" form="3"/>
-    <br><form:button>booking</form:button>
-</form:form>
+<form action="/hotel/bookingroom/book" method="post">
+    Number: <input name="roomNumber" type="number" min="1"/>
+    Passport: <input name="passport" type="text">
+    <input type="submit" value="submit" />
+</form>
 
-<p><a href="home">Главная</a></p>
-<p><a href="users">Пользователи</a></p>
-<p><a href="rooms">Комнаты</a></p>
+<h3><c:out value="${info}"/></h3>
+
+</div>
 </body>
 </html>

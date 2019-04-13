@@ -12,5 +12,4 @@ public interface UserDao {
     public User getUserById(int id);
     public void removeUser(int id);
     public User getUserByLogin(String login);
-
 }

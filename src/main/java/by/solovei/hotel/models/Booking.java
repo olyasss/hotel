@@ -23,35 +23,26 @@ public class Booking {
     private Room room;
 
     @Column(name = "DATE_FROM", nullable = false)
+    @Temporal(TemporalType.DATE)
     private Date dateFrom;
 
     @Column(name = "DATE_TO", nullable = false)
+    @Temporal(TemporalType.DATE)
     private Date dateTo;
 
-    @Column(name = "PASSPORT", nullable = false, length = 20)
-    private Integer passport;
-
-    @Column(name = "IS_PAID", nullable = false, length = 20)
-    private String paid;
+    @Column(name = "PASSPORT", nullable = false, length = 30)
+    private String passport;
 
     public Booking() {
     }
 
     public Booking(User user, Room room, Date dateFrom, Date dateTo,
-                   Integer passport, String paid) {
+                   String passport) {
         this.user = user;
         this.room = room;
         this.dateFrom = dateFrom;
         this.dateTo = dateTo;
-        passport = passport;
-        this.paid = paid;
-    }
-
-    public Booking(User user, Room room, Date dateFrom, Date dateTo) {
-        this.user = user;
-        this.room = room;
-        this.dateFrom = dateFrom;
-        this.dateTo = dateTo;
+        this.passport = passport;
     }
 
     public Integer getId() {
@@ -94,20 +85,12 @@ public class Booking {
         this.dateTo = dateTo;
     }
 
-    public Integer getPassport() {
+    public String getPassport() {
         return passport;
     }
 
-    public void setPassport(Integer passport) {
-        passport = passport;
-    }
-
-    public String getPaid() {
-        return paid;
-    }
-
-    public void setPaid(String paid) {
-        this.paid = paid;
+    public void setPassport(String passport) {
+        this.passport = passport;
     }
 
     @Override
@@ -119,7 +102,6 @@ public class Booking {
                 ", dateFrom=" + dateFrom +
                 ", dateTo=" + dateTo +
                 ", passport=" + passport +
-                ", paid=" + paid +
                 '}';
     }
 }

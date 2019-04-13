@@ -20,7 +20,7 @@
 <body>
 
 <div class="block1">
-<h5>${user_session.login} </h5>
+    <h5>${user_session.login} </h5>
 </div>
 
 <div class="block2">
@@ -31,16 +31,9 @@
 </div>
 
 <div class="block3">
-<form:form modelAttribute="userFromForm" method = "post" action="/hotel/registration/add" >
-    <br>Login: <form:input path="login" />
-    <br>Password: <form:input path="password"/>
-    <br>Email: <form:input path="email"/>
-    <br>Name: <form:input path="name"/>
-    <br>Surname: <form:input path="surname"/>
-    <br>Phone: <form:input path="phone"/>
-    <br><form:button>register</form:button>
-</form:form>
+    <h3><c:out value="${info}"/></h3>
 </div>
 
 </body>
 </html>
+

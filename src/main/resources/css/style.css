@@ -1,0 +1,45 @@
+body{
+	background: #d6e1f8
+}
+.block1 {
+	padding-left: 80%;	
+	margin-left: 2%;
+	margin-right: 2%;
+    background: url(img/san7.jpg);
+    height: 200px;
+	font-family: "gentium";
+	font-size: 15pt;
+}
+.block2 {
+	float: left;
+	width: 20%;
+	margin: 20px 2px 20px 2%;	
+	padding: 5px;
+	border-right: 1px solid #333;
+}
+.block3 {
+	margin: 20px 2% 20px 25%;
+	padding-left: 5%;
+	padding-right: 5%;
+	font-family: "gill";
+	font-size: 15pt;
+}
+h5{
+	font-family: "gentium";
+	font-size: 15pt;
+}
+@font-face {
+	font-family: "gentium";
+	src: url("fonts/gentium.ttf")format("truetype");
+	font-style:normal;
+	font-weight: normal;
+}
+@font-face {
+	font-family: "gill";
+	src: url("fonts/gill.ttf")format("truetype");
+	font-style:normal;
+	font-weight: normal;
+}
+
+
+

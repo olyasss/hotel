@@ -1,7 +1,6 @@
 package by.solovei.hotel.dao;
 
 import by.solovei.hotel.models.Booking;
-import by.solovei.hotel.models.Room;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -12,7 +11,6 @@ import org.springframework.stereotype.Repository;
 
 import java.util.Date;
 import java.util.List;
-import java.util.function.Predicate;
 
 @Repository
 public class BookingDAOImpl implements BookingDAO {
@@ -65,10 +63,10 @@ public class BookingDAOImpl implements BookingDAO {
         Session session = this.sessionFactory.getCurrentSession();
 
         Criteria criteria = session.createCriteria(Booking.class);
-        Criterion crit1 = Restrictions.and(Restrictions.lt("dateFrom",from.getTime()),
-                (Restrictions.gt("dateTo",from.getTime())));
+        Criterion crit1 = Restrictions.and(Restrictions.lt("dateFrom",from),
+                (Restrictions.gt("dateTo",from)));
 
-        Criterion crit2 = Restrictions.between("dateFrom", from.getTime(),to.getTime());
+        Criterion crit2 = Restrictions.between("dateFrom", from,to);
 
         criteria.add(Restrictions.or(crit1,crit2));
 

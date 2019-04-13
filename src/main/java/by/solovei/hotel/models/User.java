@@ -124,6 +124,15 @@ public class User implements java.io.Serializable {
         this.bookings = bookings;
     }
 
+    public void setParams(User user){
+        this.setId(user.getId());
+        this.setLogin(user.getLogin());
+        this.setPassword(user.getPassword());
+        this.setEmail(user.getEmail());
+        this.setName(user.getName());
+        this.setSurname(user.getSurname());
+        this.setPhone(user.getPhone());
+    }
 
     @Override
     public String toString() {

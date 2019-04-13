@@ -8,25 +8,31 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="res/css/style.css" type="text/css">
     <title>Index page</title>
 </head>
-<br>
-<h1>Hello</h1>
-<h5>Пользователь: ${message} </h5>
-<h5><c:out value="${userSession.login}"/></h5>
-
+<div class="block1"><h5> ${user_session.login} </h5>
 <form:form modelAttribute="log" method="post" action="/hotel/home/dologin">
-    login: <form:input path="login"/>
-    password: <form:input path="password"/>
-    <form:button>log in</form:button>
+    login:    <form:input path="login" cssStyle="align-self: end"/>
+    password: <form:input path="password" cssStyle="align-self: end" />
+    <form:button >log in</form:button>
 </form:form>
-<br><button><a href="registration">registration</a></button>
+<button class="registration" type="button"><a href="registration">registration</a></button>
+</div>
 
+<div class="block2">
+    <p><a href="home"><img src="res/buttons/home.jpg"></a></p>
+    <p><a href="bookingroom"><img src="res/buttons/booking.jpg"></a></p>
+    <p><a href="booking"><img src="res/buttons/bookingList.jpg"></a></p>
+    <p><a href="users"><img src="res/buttons/userList.jpg"></a></p>
+</div>
 
+<div class="block3">
+    На побережье Мареммы, среди нетронутых пляжей и лазури морской воды, небольших бухточек и грозных скал, среди средневековых башен и богатой растительности, возвышается отель Resort Baia Scarlino.
+    Отель расположился напротив Тосканского архипелага, в умиротворенном уголке, где находится оснащённый туристический порт.
+    Его просторные однокомнатные и двукомнатные сьюты выходят непосредственно к туристическому порту Марина-ди-Скарлино. Отель находится на расстоянии 100 км от аэропорта Пизы.
 
-<p><a href="users">Пользователи</a></p>
-<p><a href="rooms">Комнаты</a></p>
-<p><a href="booking">Заказы</a></p>
-<p><a href="bookingroom">Забронировать номер</a></p>
+</div>
+
 </body>
 </html>

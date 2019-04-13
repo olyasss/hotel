@@ -13,6 +13,7 @@
 		http://www.springframework.org/schema/tx
 		http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
     <annotation-driven />
+    <resources mapping="/res/**" location="/res/" />
 
     <beans:bean
             class="org.springframework.web.servlet.view.InternalResourceViewResolver">

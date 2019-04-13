@@ -1,0 +1,61 @@
+body{
+	background: #ffccff;
+}
+.block1 {
+	padding-left: 50%;
+	margin-left: 2%;
+	margin-right: 2%;
+    background: url(img/top.jpg);
+    height: 319px;
+	font-family: "gentium";
+	font-size: 15pt;
+}
+.block1 form{
+	padding-top: 50px;
+	margin-left: 180px;
+}
+
+.registration{
+	margin-left: 598px;
+	text-decoration: none;
+}
+.block3 h3{
+	font-size: 17px;
+	color: red;
+}
+.block2 {
+	float: left;
+	width: 20%;
+	margin: 20px 2px 20px 2%;	
+	padding: 5px;
+	border-right: 1px solid #333;
+}
+.block3 {
+	margin: 20px 2% 20px 25%;
+	padding-left: 5%;
+	padding-right: 5%;
+	font-family: "gill";
+	font-size: 15pt;
+}
+.block1 h5{
+	font-family: "gentium";
+	font-size: 15pt;
+	margin-left: 595px;
+	margin-bottom: -17px;
+	margin-top: 0px;
+}
+@font-face {
+	font-family: "gentium";
+	src: url("fonts/gentium.ttf")format("truetype");
+	font-style:normal;
+	font-weight: normal;
+}
+@font-face {
+	font-family: "gill";
+	src: url("fonts/gill.ttf")format("truetype");
+	font-style:normal;
+	font-weight: normal;
+}
+
+
+

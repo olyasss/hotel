@@ -60,7 +60,6 @@ public class BookingServiceImpl implements BookingService {
 
     @Transactional
     public List<Room> freeRooms(Date from, Date to, List<Room> listRooms){
-/*
         List<Booking> listBooking = this.bookingDAO.bookedRooms(from, to);
         if(listBooking == null) {
             return listRooms;
@@ -78,7 +77,6 @@ public class BookingServiceImpl implements BookingService {
             };
             listRooms.removeIf(predicate);
             return listRooms;
-        }*/
-        return listRooms;
+        }
     }
 }
