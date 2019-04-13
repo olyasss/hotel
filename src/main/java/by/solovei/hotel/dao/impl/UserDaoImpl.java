@@ -1,6 +1,7 @@
-package by.solovei.hotel.dao;
+package by.solovei.hotel.dao.impl;
 
-import by.solovei.hotel.models.Room;
+import by.solovei.hotel.dao.UserDao;
+import by.solovei.hotel.models.User;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -11,7 +12,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public class RoomDAOImpl implements RoomDAO {
+public class UserDaoImpl implements UserDao {
 
     @Autowired
     private SessionFactory sessionFactory;
@@ -21,47 +22,48 @@ public class RoomDAOImpl implements RoomDAO {
     }
 
     @Override
-    public void addRoom(Room room) {
+    public void addUser(User u) {
         Session session = this.sessionFactory.getCurrentSession();
-        session.persist(room);
+        session.persist(u);
     }
 
     @Override
-    public void updateRoom(Room room) {
+    public void updateUser(User u) {
         Session session = this.sessionFactory.getCurrentSession();
-        session.update(room);
+        session.update(u);
+
     }
 
     @SuppressWarnings("unchecked")
     @Override
-    public List<Room> listRoom() {
+    public List<User> listUser() {
         Session session = this.sessionFactory.getCurrentSession();
-        List<Room> roomList = session.createQuery("from Room").list();
-        return roomList;
+        List<User> userList = session.createQuery("from User").list();
+        return userList;
     }
 
     @Override
-    public Room getRoomById(int id) {
+    public User getUserById(int id) {
         Session session = this.sessionFactory.getCurrentSession();
-        Room room = (Room) session.load(Room.class, new Integer(id));
-        return room;
+        User u = (User) session.load(User.class, new Integer(id));
+        return u;
     }
 
     @Override
-    public Room getRoomByNumber(int number) {
+    public void removeUser(int id) {
         Session session = this.sessionFactory.getCurrentSession();
-        Criteria criteria = session.createCriteria(Room.class);
-        criteria.add(Restrictions.eq("number", number));
-        Room room = (Room) criteria.uniqueResult();
-        return room;
-    }
-
-    @Override
-    public void deleteRoom(int id) {
-        Session session = this.sessionFactory.getCurrentSession();
-        Room room = (Room) session.load(Room.class, new Integer(id));
-        if(room != null){
-            session.delete(room);
+        User u = (User) session.load(User.class, new Integer(id));
+        if(u != null){
+            session.delete(u);
         }
+    }
+
+    @Override
+    public User getUserByLogin(String login) {
+        Session session = this.sessionFactory.getCurrentSession();
+        Criteria criteria = session.createCriteria(User.class);
+        criteria.add(Restrictions.eq("login", login));
+        User user = (User) criteria.uniqueResult();
+        return user;
     }
 }

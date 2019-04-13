@@ -1,8 +1,9 @@
-package by.solovei.hotel.services;
+package by.solovei.hotel.services.impl;
 
 import by.solovei.hotel.dao.BookingDAO;
 import by.solovei.hotel.models.Booking;
 import by.solovei.hotel.models.Room;
+import by.solovei.hotel.services.BookingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

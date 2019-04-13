@@ -6,11 +6,11 @@ import java.util.List;
 
 public interface RoomDAO {
 
-    public void addRoom(Room room);
-    public void updateRoom(Room room);
-    public List<Room> listRoom();
-    public Room getRoomById(int id);
-    public Room getRoomByNumber(int number);
-    public void deleteRoom(int id);
+    void addRoom(Room room);
+    void updateRoom(Room room);
+    List<Room> listRoom();
+    Room getRoomById(int id);
+    Room getRoomByNumber(int number);
+    void deleteRoom(int id);
 
 }

@@ -20,7 +20,6 @@ import java.util.List;
 
 @Controller
 @SessionAttributes("user_session")
-@RequestMapping("/")
 public class BookingController {
 
     public Date date11;

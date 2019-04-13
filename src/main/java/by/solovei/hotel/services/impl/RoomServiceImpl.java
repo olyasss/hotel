@@ -1,7 +1,8 @@
-package by.solovei.hotel.services;
+package by.solovei.hotel.services.impl;
 
 import by.solovei.hotel.dao.RoomDAO;
 import by.solovei.hotel.models.Room;
+import by.solovei.hotel.services.RoomService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -9,7 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 @Service
-public class RoomServiceImpl implements RoomService{
+public class RoomServiceImpl implements RoomService {
 
     @Autowired
     private RoomDAO roomDAO;

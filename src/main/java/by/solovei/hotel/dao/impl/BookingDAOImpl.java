@@ -1,5 +1,6 @@
-package by.solovei.hotel.dao;
+package by.solovei.hotel.dao.impl;
 
+import by.solovei.hotel.dao.BookingDAO;
 import by.solovei.hotel.models.Booking;
 import org.hibernate.Criteria;
 import org.hibernate.Session;

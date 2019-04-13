@@ -14,7 +14,6 @@ import java.util.Date;
 
 @Controller
 @SessionAttributes("user_session")
-@RequestMapping("/")
 public class HomeController  {
 
     @Autowired
