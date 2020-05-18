@@ -6,5 +6,5 @@ node {
       sh 'mvn clean install'
    }
    stage('Post Steps') {
-      sh 'cp $WORKSPACE/hotel/target/*.jar /opt/hotel'
+      sh 'cp /var/lib/jenkins/workspace/hotel/target/*.jar /opt/hotel'
 }
