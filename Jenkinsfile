@@ -6,6 +6,6 @@ node {
       sh 'mvn clean install'
    }
    stage('Post Steps') {
-      sh "cp $WORKSPACE/pipeFirst/target/*.war /opt/hotel"
+      sh "cp $WORKSPACE/target/*.war /opt/hotel"
    }
 }
