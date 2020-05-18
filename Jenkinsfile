@@ -7,4 +7,5 @@ node {
    }
    stage('Post Steps') {
       sh 'cp /var/lib/jenkins/workspace/hotel/target/*.jar /opt/hotel'
+   }
 }
