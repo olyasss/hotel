@@ -6,6 +6,6 @@ node {
       sh 'mvn clean install'
    }
    stage('Post Steps') {
-      sh "cp /var/lib/jenkins/workspace/pipeFirst/target/*.war /opt/hotel"
+      sh "cp $WORKSPACE/pipeFirst/target/*.war /opt/hotel"
    }
 }
