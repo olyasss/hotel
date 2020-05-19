@@ -5,7 +5,4 @@ node {
    stage('Cpmpile-Package') {
       sh 'mvn clean install'
    }
-   stage('Post Steps') {
-      sh "cp $WORKSPACE/target/*.war /opt/hotel"
-   }
 }
