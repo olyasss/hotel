@@ -4,6 +4,6 @@ node {
    }
    stage('Cpmpile-Package') {
       sh 'mvn clean install'
-      sh 'mvn dockerfile:push'
+      sh 'cp $WORKSPACE/target/*.war /opt/plugintest/'
    }
 }
